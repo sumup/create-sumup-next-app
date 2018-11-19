@@ -1,5 +1,5 @@
 <div align="center">
-# ⚛️ create-sumup-next-app ⚛️
+<h1>⚛️ create-sumup-next-app ⚛️</h1>
 
 The easiest way to get started writing a [Next.js](https://github.com/zeit/next.js/) app with SumUp's standard frontend toolchain.
 
@@ -17,7 +17,7 @@ The easiest way to get started writing a [Next.js](https://github.com/zeit/next.
 2. Navigate to the directory you would like to place your project in.
 3. Run `yarn create @sumup/sumup-next-app my-app`, where `my-app` is the name of your project.
 
-This will create the folder `my-app` and initialize a new project inside. The project will be based on [`Next.js`](https://github.com/zeit/next.js/) and will use SumUp's [`Circuit UI`](https://circuit.sumup.com/#/) component library and [`Foundry`](https://github.com/sumup/foundry) toolkit as well as [`lodash`](https://lodash.com/).
+This will create the folder `my-app` and initialize a new project inside. The project will be based on [`Next.js`](https://github.com/zeit/next.js/) and will use SumUp's [`Circuit UI`](https://circuit.sumup.com/#/) component library and [`Foundry`](https://github.com/sumup/foundry) toolkit, as well as [`lodash`](https://lodash.com/).
 
 ## 🛠 Development workflow
 
