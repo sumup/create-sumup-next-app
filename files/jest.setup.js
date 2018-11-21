@@ -1,3 +1,5 @@
+/* global expect */
+
 /**
  * Add custom Jest matchers for the DOM.
  * https://github.com/gnapse/jest-dom#table-of-contents
@@ -8,7 +10,6 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createMatchers, createSerializer } from 'jest-emotion';
 import { axe, toHaveNoViolations } from 'jest-axe';
-import { create } from 'react-test-renderer';
 import { render } from 'react-testing-library';
 import * as emotion from 'emotion';
 import { ThemeProvider } from 'emotion-theming';
@@ -19,7 +20,6 @@ const { standard } = theme;
 const renderWithTheme = renderFn => (component, ...rest) =>
   renderFn(<ThemeProvider theme={standard}>{component}</ThemeProvider>, rest);
 
-global.create = renderWithTheme(create);
 global.render = renderWithTheme(render);
 global.renderToHtml = renderWithTheme(renderToStaticMarkup);
 global.axe = axe;

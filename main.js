@@ -21,6 +21,7 @@ const DEPENDENCIES = [
   'react',
   'react-dom',
   'next',
+  'prop-types',
   // Our beautiful component library 💄
   '@sumup/circuit-ui',
   // CSS-in-JS 🚀
@@ -35,14 +36,13 @@ const DEPENDENCIES = [
   'esm'
 ];
 const DEV_DEPENDENCIES = [
-  // React ⚛
-  'prop-types',
   // The toolkit 🛠
   '@sumup/foundry',
   // Development 🏗
   'nodemon',
   // Testing 📏
   'react-testing-library',
+  'react-test-renderer',
   'jest',
   'jest-emotion',
   'jest-dom',
@@ -50,6 +50,8 @@ const DEV_DEPENDENCIES = [
   // Loaders and plugins 🔌
   'babel-plugin-emotion',
   'babel-plugin-lodash',
+  'babel-jest',
+  'babel-core@7.0.0-bridge.0',
   'react-svg-loader',
   'webpack-bundle-analyzer',
   '@weco/next-plugin-transpile-modules'

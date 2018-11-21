@@ -4,6 +4,7 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/src/.next/'],
   watchPathIgnorePatterns: ['<rootDir>/src/.next/'],
   transform: {
+    '^.+\\.js$': '<rootDir>/jest.transform.js',
     '^.+\\.svg$': '<rootDir>/jest.fileTransform.js'
   },
   transformIgnorePatterns: ['node_modules/(?!@sumup/circuit-ui/)'],
