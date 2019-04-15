@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import App, { Container } from 'next/app';
+import Head from 'next/head';
 import { ThemeProvider } from 'emotion-theming';
 import { GlobalStyles, theme } from '@sumup/circuit-ui';
 
@@ -22,9 +23,9 @@ export default class CustomApp extends App {
             type="image/x-icon"
           />
         </Head>
-        <GlobalStyles custom={customStyles} />
         <Container>
           <ThemeProvider theme={standard}>
+            <GlobalStyles custom={customStyles} />
             <Component {...pageProps} />
           </ThemeProvider>
         </Container>

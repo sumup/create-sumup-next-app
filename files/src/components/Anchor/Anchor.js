@@ -32,7 +32,7 @@ export const A = styled('a')(baseStyles);
  */
 function Anchor({ children, title, className, id, ...otherProps }) {
   return (
-    <Link {...otherProps}>
+    <Link {...otherProps} passHref>
       <A {...{ title, className, id }}>{children}</A>
     </Link>
   );

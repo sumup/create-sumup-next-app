@@ -14,6 +14,12 @@ module.exports = withPlugins(
         fs: 'empty'
       };
 
+      // eslint-disable-next-line no-param-reassign
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@sumup/circuit-ui': require.resolve('@sumup/circuit-ui/lib/es')
+      };
+
       if (ANALYZE) {
         config.plugins.push(
           new BundleAnalyzerPlugin({

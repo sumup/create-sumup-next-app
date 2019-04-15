@@ -23,7 +23,7 @@ const DEPENDENCIES = [
   'next',
   'prop-types',
   // Our beautiful component library 💄
-  '@sumup/circuit-ui',
+  '@sumup/circuit-ui@beta',
   // CSS-in-JS 🚀
   '@emotion/core',
   '@emotion/styled',
