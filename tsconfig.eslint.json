@@ -3,8 +3,8 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.js",
-    "files/**/*.ts",
-    "files/**/*.js",
+    "template/**/*.ts",
+    "template/**/*.js",
     "*.config.js"
   ]
 }

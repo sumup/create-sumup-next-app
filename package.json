@@ -17,7 +17,7 @@
     "release": "foundry run semantic-release"
   },
   "bin": "bin",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Connor Baer <connor.baer@sumup.com>",
   "license": "MIT",
   "repository": "https://github.com/sumup/create-sumup-next-app",
