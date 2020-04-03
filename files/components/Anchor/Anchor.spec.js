@@ -14,7 +14,7 @@ import Anchor, { A } from './Anchor';
 
 const defaultProps = {
   href: 'https://sumup.com',
-  children: `Visit SumUp's website`
+  children: `Visit SumUp's website`,
 };
 
 function renderAnchor(renderFn, props = {}) {

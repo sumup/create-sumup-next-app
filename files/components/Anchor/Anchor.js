@@ -55,7 +55,7 @@ Anchor.propTypes = {
   /**
    * A unique selector.
    */
-  id: PropTypes.string
+  id: PropTypes.string,
 };
 
 /**

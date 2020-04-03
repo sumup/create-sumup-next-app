@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
@@ -14,7 +13,7 @@ const Logo = styled(LogoIcon)(
     fill: ${theme.colors.n900};
     margin-bottom: ${theme.spacings.tera};
     margin-top: ${theme.spacings.peta};
-  `
+  `,
 );
 
 export default Logo;
