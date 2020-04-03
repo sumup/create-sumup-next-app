@@ -9,7 +9,10 @@
     "sumup"
   ],
   "scripts": {
-    "lint": "foundry run eslint \"**/*.js\""
+    "lint": "foundry run eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "yarn lint --fix",
+    "lint:ci": "yarn lint --format junit -o __reports__/junit/eslint-results.xml",
+    "release": "foundry run semantic-release"
   },
   "bin": "bin",
   "main": "index.js",
@@ -20,7 +23,7 @@
     "url": "https://github.com/sumup/create-sumup-next-app/issues"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10.13.0"
   },
   "dependencies": {
     "chalk": "^2.4.1",
@@ -29,6 +32,7 @@
     "listr-verbose-renderer": "^0.5.0"
   },
   "devDependencies": {
-    "@sumup/foundry": "^1.1.4"
+    "@sumup/foundry": "^2.0.0",
+    "typescript": "^3.8.3"
   }
 }
