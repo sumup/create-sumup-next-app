@@ -1,3 +1,18 @@
+/**
+ * Copyright 2020, SumUp Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { resolve } from 'path';
 import { writeFile } from 'fs';
 import { promisify } from 'util';
@@ -24,7 +39,7 @@ const DEPENDENCIES = [
   '@emotion/styled',
   'emotion-theming',
   // Tools 🛠
-  'lodash'
+  'lodash',
 ];
 const DEV_DEPENDENCIES = [
   // The toolkit 🛠
@@ -41,12 +56,12 @@ const DEV_DEPENDENCIES = [
   'babel-plugin-emotion',
   'babel-plugin-lodash',
   'babel-plugin-inline-react-svg',
-  'babel-jest'
+  'babel-jest',
 ];
 
 const options = util.isDebugging()
   ? {
-      renderer: VerboseRenderer
+      renderer: VerboseRenderer,
     }
   : {};
 
@@ -54,11 +69,11 @@ const tasks = new Listr(
   [
     {
       title: 'Running Create Next App',
-      task: () => runCreateNextApp(APP_NAME)
+      task: () => runCreateNextApp(APP_NAME),
     },
     {
       title: 'Install additional dependencies',
-      task: () => addDependencies()
+      task: () => addDependencies(),
     },
     {
       title: 'Customize experience',
@@ -66,23 +81,23 @@ const tasks = new Listr(
         new Listr([
           {
             title: 'Set up SumUp Foundry',
-            task: () => setUpFoundry(APP_PATH)
+            task: () => setUpFoundry(APP_PATH),
           },
           {
             title: 'Replace Create Next App files',
             task: async () => {
               await deleteNextFiles(APP_PATH);
               return copyCircuitFiles(APP_PATH);
-            }
+            },
           },
           {
             title: 'Customize package.json',
-            task: () => updatePackageJson(APP_PATH)
-          }
-        ])
-    }
+            task: () => updatePackageJson(APP_PATH),
+          },
+        ]),
+    },
   ],
-  options
+  options,
 );
 
 run();
@@ -93,7 +108,7 @@ async function run() {
       'Please pass a name for your app. For example, try',
       '\n',
       chalk`  yarn create @sumup/sumup-next-app {italic.bold my-app}`,
-      '\n'
+      '\n',
     ]);
     process.exit(1);
   }
@@ -129,7 +144,7 @@ function runCreateNextApp(appName) {
 async function addDependencies({
   dependencies = DEPENDENCIES,
   devDepenencies = DEV_DEPENDENCIES,
-  cwd = APP_PATH
+  cwd = APP_PATH,
 } = {}) {
   const cmd = 'yarn';
   const args = ['add', ...dependencies];
@@ -151,7 +166,7 @@ function setUpFoundry(appPath, childProcessOptions = {}) {
     '--plop',
     'react',
     '--lint-staged',
-    '--husky'
+    '--husky',
   ];
   return spawn(cmd, args, { cwd: appPath, ...childProcessOptions });
 }
@@ -161,9 +176,9 @@ function deleteNextFiles(appPath) {
   const filesToDelete = [
     'components/nav.js',
     'pages/index.js',
-    'public/favicon.ico'
+    'public/favicon.ico',
   ];
-  const args = ['-rf', ...filesToDelete.map(file => file)];
+  const args = ['-rf', ...filesToDelete.map((file) => file)];
   return spawn(cmd, args, { cwd: appPath });
 }
 
@@ -181,12 +196,12 @@ function copyCircuitFiles(appPath, sourcePath = FILES_PATH) {
     'jest.setup.js',
     'jest.fileTransform.js',
     'jest.transform.js',
-    'README.md'
+    'README.md',
   ];
   const args = [
     '-r',
-    ...filesToCopy.map(file => resolve(sourcePath, file)),
-    appPath
+    ...filesToCopy.map((file) => resolve(sourcePath, file)),
+    appPath,
   ];
   return spawn(cmd, args, { cwd: appPath });
 }
@@ -196,20 +211,20 @@ async function updatePackageJson(appPath) {
   const { default: packageJson } = await import(filepath);
   const main = 'server/index.js';
   const scripts = {
-    lint: 'foundry run eslint "**/*.js"',
-    test: 'jest --watch',
+    'lint': 'foundry run eslint "**/*.js"',
+    'test': 'jest --watch',
     'test:ci':
       'jest --ci --coverage  --reporters=default --reporters=jest-junit',
     'test:coverage': 'jest --coverage',
-    'create:component': 'foundry run plop component'
+    'create:component': 'foundry run plop component',
   };
   const updatedPackageJson = {
     ...packageJson,
     main,
     scripts: {
       ...packageJson.scripts,
-      ...scripts
-    }
+      ...scripts,
+    },
   };
 
   const fileContent = JSON.stringify(updatedPackageJson, null, 2);
