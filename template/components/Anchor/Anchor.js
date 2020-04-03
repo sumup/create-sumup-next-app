@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
@@ -37,26 +36,6 @@ function Anchor({ children, title, className, id, ...otherProps }) {
     </Link>
   );
 }
-
-Anchor.propTypes = {
-  /**
-   * The link label.
-   */
-  children: sharedPropTypes.childrenPropType.isRequired,
-  /**
-   * Additional information about the link. Displayed as a tooltip.
-   * The title attribute is usually ignored by screenreaders.
-   */
-  title: PropTypes.string,
-  /**
-   * Pass a class name to customize the style of the anchor.
-   */
-  className: PropTypes.string,
-  /**
-   * A unique selector.
-   */
-  id: PropTypes.string,
-};
 
 /**
  * @component
