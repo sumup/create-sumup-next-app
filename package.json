@@ -9,6 +9,8 @@
     "sumup"
   ],
   "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
     "lint": "foundry run eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:ci": "yarn lint --format junit -o __reports__/junit/eslint-results.xml",
@@ -27,7 +29,6 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "esm": "^3.1.0",
     "listr": "^0.14.2",
     "listr-verbose-renderer": "^0.5.0"
   },
