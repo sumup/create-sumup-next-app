@@ -1,12 +1,13 @@
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+
+import styled from '../../utils/styled';
 
 /**
  * SVG files can be imported and used as React components.
  */
-import LogoIcon from './logo.svg';
+import LogoIcon from './svgs/logo.svg';
 
-const Logo = styled(LogoIcon)(
+export const Logo = styled(LogoIcon)(
   ({ theme }) => css`
     display: block;
     max-width: 120px;
@@ -15,5 +16,3 @@ const Logo = styled(LogoIcon)(
     margin-top: ${theme.spacings.peta};
   `,
 );
-
-export default Logo;

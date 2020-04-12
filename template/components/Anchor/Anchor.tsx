@@ -1,8 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import styled from '@emotion/styled';
+import React, { FC } from 'react';
 import { css } from '@emotion/core';
-import { sharedPropTypes } from '@sumup/circuit-ui';
+
+import styled from '../../utils/styled';
+
+export type AnchorProps = React.HTMLProps<HTMLAnchorElement>;
 
 const baseStyles = ({ theme }) => css`
   color: ${theme.colors.p700};
@@ -24,20 +25,12 @@ const baseStyles = ({ theme }) => css`
   }
 `;
 
-export const A = styled('a')(baseStyles);
+const A = styled.a(baseStyles);
 
 /**
  * A basic anchor component for text links.
  */
-function Anchor({ children, title, className, id, ...otherProps }) {
-  return (
-    <Link {...otherProps} passHref>
-      <A {...{ title, className, id }}>{children}</A>
-    </Link>
-  );
-}
-
-/**
- * @component
- */
-export default Anchor;
+export const Anchor: FC<AnchorProps> = (props) => {
+  const rel = props.target === '_blank' ? 'noopener noreferrer' : props.rel;
+  return <A {...props} rel={rel} />;
+};
