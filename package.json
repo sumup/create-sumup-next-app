@@ -13,12 +13,12 @@
     "build": "tsc",
     "lint": "foundry run eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
-    "lint:ci": "yarn lint --format junit -o __reports__/junit/eslint-results.xml",
+    "lint:ci": "yarn lint --format junit -o __reports__/eslint-results.xml",
     "release": "foundry run semantic-release"
   },
   "bin": "bin",
   "main": "dist/index.js",
-  "author": "Connor Baer <connor.baer@sumup.com>",
+  "author": "Connor Bär <connor.baer@sumup.com>",
   "license": "MIT",
   "repository": "https://github.com/sumup/create-sumup-next-app",
   "bugs": {

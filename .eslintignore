@@ -7,3 +7,5 @@ static/
 public/
 coverage/
 __coverage__/
+__reports__/
+template/
