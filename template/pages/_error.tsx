@@ -53,7 +53,7 @@ const ErrorPage: NextPage<ErrorPageProps> = ({ statusCode }) => (
             Reload the page
           </Button>
           <Link href="/" passHref>
-            <Button primary>Go to the homepage</Button>
+            <Button variant="primary">Go to the homepage</Button>
           </Link>
         </ButtonGroup>
       </Card>

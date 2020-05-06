@@ -43,7 +43,7 @@ const NotFound: NextPage = () => (
         </Text>
 
         <Link href="/" passHref>
-          <Button primary>Return to the homepage</Button>
+          <Button variant="primary">Return to the homepage</Button>
         </Link>
       </Card>
     </Container>

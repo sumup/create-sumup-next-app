@@ -1,4 +1,9 @@
-module.exports = {
+const withTM = require('next-transpile-modules')([
+  '@sumup/circuit-ui',
+  '@sumup/icons',
+]);
+
+module.exports = withTM({
   /**
    * Environment variables can be used to inject dynamic configuration
    * into the Next.js app at built time. Learn more at
@@ -10,4 +15,4 @@ module.exports = {
     SITE_BASEURL: 'https://example.sumup.com',
     STATIC_ASSET_BASEURL: 'https://static.sumup.com',
   },
-};
+});

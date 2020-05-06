@@ -1,12 +1,11 @@
 import React from 'react';
 import { NextPage } from 'next';
 import { css } from '@emotion/core';
-import { Card, Heading, List, Text } from '@sumup/circuit-ui';
+import { Card, Heading, Text, List, Anchor } from '@sumup/circuit-ui';
 
 import styled from '../utils/styled';
 import { Meta } from '../components/Meta';
 import { Logo } from '../components/Logo';
-import { Anchor } from '../components/Anchor';
 
 const Container = styled('section')(
   ({ theme }) => css`
@@ -38,53 +37,62 @@ const Page: NextPage = () => (
         </Heading>
         <Text>
           This is a{' '}
-          <Anchor href="https://github.com/zeit/next.js" target="_blank">
+          <Anchor
+            href="https://github.com/zeit/next.js"
+            target="_blank"
+            noMargin
+          >
             Next.js
           </Anchor>
           -based starter project featuring some{' '}
-          <Anchor href="https://sumup.com" target="_blank">
+          <Anchor href="https://sumup.com" target="_blank" noMargin>
             SumUp
           </Anchor>
           -specific customizations:
         </Text>
 
-        <List size={List.MEGA}>
+        <List size="mega" ordered={false}>
           <li>
             <Anchor
               href="https://github.com/sumup-oss/circuit-ui"
               target="_blank"
+              noMargin
             >
               Circuit UI
             </Anchor>{' '}
             integration
           </li>
           <li>
-            <Anchor href="https://emotion.sh/" target="_blank">
+            <Anchor href="https://emotion.sh/" target="_blank" noMargin>
               Emotion
             </Anchor>{' '}
             support (incl. babel plugin)
           </li>
           <li>
-            <Anchor href="https://lodash.com/" target="_blank">
+            <Anchor href="https://lodash.com/" target="_blank" noMargin>
               Lodash
             </Anchor>{' '}
             support (incl. babel plugin)
           </li>
           <li>
             {`SumUp's default tooling provided by `}
-            <Anchor href="https://github.com/sumup-oss/foundry" target="_blank">
+            <Anchor
+              href="https://github.com/sumup-oss/foundry"
+              target="_blank"
+              noMargin
+            >
               Foundry
             </Anchor>
           </li>
           <li>Basic SEO and performance optimizations</li>
         </List>
 
-        <Text size={Text.GIGA} css={centeredStyles}>
+        <Text size="giga" css={centeredStyles}>
           Now go and build things!
           <br />
         </Text>
         <Text
-          size={Text.GIGA}
+          size="giga"
           css={css`
             ${centeredStyles};
             transform: scale3d(1.5, 1.5, 1);

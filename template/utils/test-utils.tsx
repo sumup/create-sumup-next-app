@@ -10,7 +10,7 @@ import {
 } from '@testing-library/react';
 import { renderHook, act as actHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
-import { Theme, theme as themes } from '@sumup/circuit-ui';
+import { Theme, light } from '@sumup/design-tokens';
 
 export type RenderFn = (
   component: React.ReactNode,
@@ -27,7 +27,7 @@ const renderWithProviders = (renderer: Renderer): RenderFn => (
   context = {},
   ...rest
 ) => {
-  const { theme = themes.circuit } = context;
+  const { theme = light } = context;
   return renderer(
     <ThemeProvider theme={theme}>{component}</ThemeProvider>,
     rest,
