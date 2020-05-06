@@ -1,4 +1,4 @@
 module.exports = {
-  presets: ['next/babel'],
-  plugins: ['lodash', 'emotion', 'inline-react-svg']
+  presets: ['next/babel', '@emotion/babel-preset-css-prop'],
+  plugins: ['lodash', 'inline-react-svg'],
 };

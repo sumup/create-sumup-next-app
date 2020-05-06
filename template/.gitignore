@@ -9,7 +9,7 @@ node_modules
 
 .eslintcache
 __coverage__
-junit.xml
+__reports__
 
 # Packages #
 
