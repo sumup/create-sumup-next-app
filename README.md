@@ -1,5 +1,6 @@
 <div align="center">
-<h1>⚛️ create-sumup-next-app ⚛️</h1>
+
+# ⚛️ create-sumup-next-app ⚛️
 
 The easiest way to get started writing a [Next.js](https://github.com/zeit/next.js/) app with SumUp's standard frontend toolchain.
 
