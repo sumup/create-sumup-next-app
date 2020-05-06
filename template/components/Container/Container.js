@@ -9,7 +9,7 @@ const Container = styled('section')(
     width: 100%;
     max-width: 450px;
     margin: 0 auto ${theme.spacings.kilo};
-  `
+  `,
 );
 
 export default Container;

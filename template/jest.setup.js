@@ -1,5 +1,3 @@
-/* global expect */
-
 /**
  * Add custom Jest matchers for the DOM.
  * https://github.com/testing-library/jest-dom#custom-matchers
@@ -21,7 +19,7 @@ const WithProviders = ({ children }) => (
   <ThemeProvider theme={circuit}>{children}</ThemeProvider>
 );
 
-const renderWithProviders = renderFn => (component, ...rest) =>
+const renderWithProviders = (renderFn) => (component, ...rest) =>
   renderFn(<WithProviders>{component}</WithProviders>, rest);
 
 global.axe = axe;
@@ -61,6 +59,6 @@ expect.addSnapshotSerializer(
   createSerializer({
     classNameReplacer(className, index) {
       return `circuit-${index}`;
-    }
-  })
+    },
+  }),
 );
