@@ -14,6 +14,7 @@
     "lint": "foundry run eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:ci": "yarn lint --format junit -o __reports__/eslint-results.xml",
+    "prerelease": "yarn build",
     "release": "foundry run semantic-release"
   },
   "bin": "bin",
