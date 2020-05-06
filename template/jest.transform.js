@@ -8,11 +8,11 @@ const babelConfig = {
       'next/babel',
       {
         'preset-env': {
-          modules: 'commonjs'
-        }
-      }
-    ]
-  ]
+          modules: 'commonjs',
+        },
+      },
+    ],
+  ],
 };
 
 module.exports = createTransformer(babelConfig);

@@ -7,7 +7,7 @@ import { BaseStyles, theme as themes } from '@sumup/circuit-ui';
 
 const { circuit } = themes;
 
-const customStyles = theme => `
+const customStyles = (theme) => `
 body {
   background-color: ${theme.colors.n100};
 }`;
