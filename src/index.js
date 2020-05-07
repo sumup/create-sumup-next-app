@@ -136,7 +136,7 @@ File issue: https://github.com/sumup/create-sumup-next-app/issues/new
 
 function runCreateNextApp(appName) {
   const cmd = 'yarn';
-  const args = ['create', 'next-app', appName];
+  const args = ['create', 'next-app', '--example', 'default', appName];
 
   return spawn(cmd, args, { cwd: WORKING_DIR });
 }
@@ -173,11 +173,7 @@ function setUpFoundry(appPath, childProcessOptions = {}) {
 
 function deleteNextFiles(appPath) {
   const cmd = 'rm';
-  const filesToDelete = [
-    'components/nav.js',
-    'pages/index.js',
-    'public/favicon.ico',
-  ];
+  const filesToDelete = ['public', 'pages'];
   const args = ['-rf', ...filesToDelete.map((file) => file)];
   return spawn(cmd, args, { cwd: appPath });
 }
