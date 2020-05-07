@@ -27,6 +27,8 @@ jobs:
         run: |
           npm install -g yarn
           yarn --pure-lockfile
+      - name: Install template dependencies
+        run: cd template && yarn
       - name: Lint
         run: yarn lint:ci
       - name: Upload code coverage
