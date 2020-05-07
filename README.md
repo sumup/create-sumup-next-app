@@ -15,7 +15,7 @@ The easiest way to get started writing a [Next.js](https://github.com/zeit/next.
 
 1. Open your terminal.
 2. Navigate to the directory you would like to place your project in.
-3. Run `yarn create next-app --example "https://github.com/sumup/create-sumup-next-app" --examplePath template my-app`, where `my-app` is the name of your project.
+3. Run `yarn create next-app --example "https://github.com/sumup/create-sumup-next-app/tree/master/template" my-app`, where `my-app` is the name of your project.
 
 This will create the folder `my-app` and initialize a new project inside. The project will be based on [`Next.js`](https://github.com/zeit/next.js/) and will use SumUp's [`Circuit UI`](https://circuit.sumup.com/#/) component library and [`Foundry`](https://github.com/sumup/foundry) toolkit, as well as [`lodash`](https://lodash.com/).
 
