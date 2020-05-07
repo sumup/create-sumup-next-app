@@ -1,13 +1,9 @@
 import { css } from '@emotion/core';
+import { SumUpLogo } from '@sumup/icons';
 
 import styled from '../../utils/styled';
 
-/**
- * SVG files can be imported and used as React components.
- */
-import LogoIcon from './svgs/logo.svg';
-
-export const Logo = styled(LogoIcon)(
+export const Logo = styled(SumUpLogo)(
   ({ theme }) => css`
     display: block;
     max-width: 120px;
