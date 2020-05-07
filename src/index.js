@@ -23,7 +23,6 @@ import VerboseRenderer from 'listr-verbose-renderer';
 
 import spawn from './lib/spawn';
 import logger from './lib/logger';
-import * as util from './lib/util';
 
 const asyncWriteFile = promisify(writeFile);
 
@@ -58,12 +57,6 @@ const DEV_DEPENDENCIES = [
   'babel-plugin-inline-react-svg',
   'babel-jest',
 ];
-
-const options = util.isDebugging()
-  ? {
-      renderer: VerboseRenderer,
-    }
-  : {};
 
 const tasks = new Listr(
   [
@@ -104,7 +97,11 @@ const tasks = new Listr(
         ),
     },
   ],
-  options,
+  {
+    // CNA requires user interaction which is only possible
+    // with the VerboseRenderer.
+    renderer: VerboseRenderer,
+  },
 );
 
 run();
@@ -143,7 +140,7 @@ File issue: https://github.com/sumup/create-sumup-next-app/issues/new
 
 function runCreateNextApp(appName) {
   const cmd = 'yarn';
-  const args = ['create', 'next-app', '--example', 'default', appName];
+  const args = ['create', 'next-app', appName];
 
   return spawn(cmd, args, { cwd: WORKING_DIR });
 }
