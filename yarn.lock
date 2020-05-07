@@ -1593,11 +1593,6 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-date-fns@^2.0.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.11.1.tgz#197b8be1bbf5c5e6fe8bea817f0fe111820e7a12"
-  integrity sha512-3RdUoinZ43URd2MJcquzBbDQo+J87cSzB8NkXdZiN5ia1UNyep0oCyitfiL88+R7clGTeq/RniXAc16gWyAu1w==
-
 dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
@@ -3935,16 +3930,6 @@ listr-verbose-renderer@^0.5.0:
     chalk "^2.4.1"
     cli-cursor "^2.1.0"
     date-fns "^1.27.2"
-    figures "^2.0.0"
-
-listr-verbose-renderer@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/listr-verbose-renderer/-/listr-verbose-renderer-0.6.0.tgz#10d5a960c7763878b0812c884a11dde29ac16c33"
-  integrity sha512-P3bA/giMu432bs3gHiKXKOIHlWanCIlRhbhCfgKNgCoyvTvZsdbfkgX1BvThYXhm36cS8pOX3Z5vxXBFZC+NQw==
-  dependencies:
-    chalk "^2.4.1"
-    cli-cursor "^2.1.0"
-    date-fns "^2.0.1"
     figures "^2.0.0"
 
 listr2@1.3.8:

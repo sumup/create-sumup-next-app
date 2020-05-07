@@ -1,13 +1,18 @@
 module.exports = require('@sumup/foundry/eslint')(
   {
     language: 'TypeScript',
-    environments: ['Node'],
-    frameworks: ['Jest'],
-    openSource: true,
+    environments: ['Browser'],
+    frameworks: ['Jest', 'Emotion', 'React'],
+    openSource: false,
   },
   {
-    rules: {
-      'no-process-exit': 'off',
-    },
+    overrides: [
+      {
+        files: ['template/**/*'],
+        rules: {
+          'import/no-unresolved': 'off',
+        },
+      },
+    ],
   },
 );
