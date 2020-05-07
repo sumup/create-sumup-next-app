@@ -78,23 +78,30 @@ const tasks = new Listr(
     {
       title: 'Customize experience',
       task: () =>
-        new Listr([
-          {
-            title: 'Set up SumUp Foundry',
-            task: () => setUpFoundry(APP_PATH),
-          },
-          {
-            title: 'Replace Create Next App files',
-            task: async () => {
-              await deleteNextFiles(APP_PATH);
-              return copyCircuitFiles(APP_PATH);
+        new Listr(
+          [
+            {
+              title: 'Set up SumUp Foundry',
+              task: () => setUpFoundry(APP_PATH),
             },
-          },
+            {
+              title: 'Replace Create Next App files',
+              task: async () => {
+                await deleteNextFiles(APP_PATH);
+                return copyCircuitFiles(APP_PATH);
+              },
+            },
+            {
+              title: 'Customize package.json',
+              task: () => updatePackageJson(APP_PATH),
+            },
+          ],
           {
-            title: 'Customize package.json',
-            task: () => updatePackageJson(APP_PATH),
+            // Foundry requires user interaction which is only possible
+            // with the VerboseRenderer.
+            renderer: VerboseRenderer,
           },
-        ]),
+        ),
     },
   ],
   options,
@@ -156,18 +163,7 @@ async function addDependencies({
 
 function setUpFoundry(appPath, childProcessOptions = {}) {
   const cmd = 'npx';
-  const args = [
-    'foundry',
-    'bootstrap-config',
-    '--eslint',
-    'react',
-    '--prettier',
-    'base',
-    '--plop',
-    'react',
-    '--lint-staged',
-    '--husky',
-  ];
+  const args = ['foundry', 'init', '--language', 'TypeScript'];
   return spawn(cmd, args, { cwd: appPath, ...childProcessOptions });
 }
 
@@ -207,12 +203,10 @@ async function updatePackageJson(appPath) {
   const { default: packageJson } = await import(filepath);
   const main = 'server/index.js';
   const scripts = {
-    'lint': 'foundry run eslint "**/*.js"',
     'test': 'jest --watch',
     'test:ci':
       'jest --ci --coverage  --reporters=default --reporters=jest-junit',
     'test:coverage': 'jest --coverage',
-    'create:component': 'foundry run plop component',
   };
   const updatedPackageJson = {
     ...packageJson,
