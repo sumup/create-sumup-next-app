@@ -8,7 +8,6 @@ public/
 coverage/
 __coverage__/
 __reports__/
-template/
-/*.config.js
-/*rc.js
+*.config.js
+*rc.js
 plopfile.js
