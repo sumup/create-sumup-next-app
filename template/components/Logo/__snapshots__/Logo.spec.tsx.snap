@@ -11,12 +11,10 @@ exports[`Logo should render with default styles 1`] = `
 
 <svg
   class="emotion-0"
+  fill="currentColor"
   viewBox="0 0 214 63"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    SumUp
-  </title>
   <g
     fill-rule="evenodd"
   >

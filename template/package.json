@@ -14,7 +14,8 @@
     "@emotion/styled": "^10.0.0",
     "@sumup/circuit-ui": "2.0.0-alpha.16",
     "@sumup/design-tokens": "1.0.0-alpha.2",
-    "@sumup/icons": "1.0.0-canary.13",
+    "@sumup/icons": "1.0.0-canary.15",
+    "create-emotion-server": "^10.0.27",
     "emotion": "^10.0.0",
     "emotion-server": "^10.0.0",
     "emotion-theming": "^10.0.0",
@@ -44,42 +45,5 @@
     "react-test-renderer": "^16.13.1",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "globals": {
-      "ts-jest": {
-        "babelConfig": true
-      }
-    },
-    "testURL": "http://localhost",
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "ts",
-      "tsx"
-    ],
-    "testPathIgnorePatterns": ["./.next/", "./node_modules/"],
-    "setupFilesAfterEnv": [
-      "<rootDir>/setupTests.tsx"
-    ],
-    "snapshotSerializers": [
-      "jest-emotion"
-    ],
-    "coverageDirectory": "./__coverage__",
-    "coverageReporters": [
-      "cobertura",
-      "text-summary",
-      "html"
-    ],
-    "collectCoverageFrom": [
-      "components/**/*.(js|jsx|ts|tsx)",
-      "pages/**/*.(js|jsx|ts|tsx)",
-      "services/**/*.(js|jsx|ts|tsx)",
-      "!components/**/index.(js|jsx|ts|tsx)",
-      "!**/*.d.ts",
-      "!/public/",
-      "!/node_modules/"
-    ]
   }
 }

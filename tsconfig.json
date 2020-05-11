@@ -4,15 +4,15 @@
     "module": "commonjs",
     "declaration": true,
     "strict": true,
+    "jsx": "preserve",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "outDir": "dist",
-    "allowJs": true
+    "noEmit": true
   },
-  "include": ["src/**/*"],
-  "typeRoots": ["./node_modules/@types", "./src/types/"]
+  "include": ["template/**/*"],
+  "typeRoots": ["./node_modules/@types", "./template/types/"]
 }

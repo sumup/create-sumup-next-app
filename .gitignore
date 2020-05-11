@@ -2,6 +2,7 @@
 
 dist/
 __reports__
+template/yarn.lock
 
 # Logs
 logs
