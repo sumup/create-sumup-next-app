@@ -7,14 +7,14 @@ import styled from '../utils/styled';
 import { Meta } from '../components/Meta';
 import { Logo } from '../components/Logo';
 
-const Container = styled('section')(
+const Main = styled('main')(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 450px;
-    margin: 0 auto ${theme.spacings.kilo};
+    margin: 0 auto ${theme.spacings.mega};
   `,
 );
 
@@ -27,12 +27,10 @@ const title = 'Welcome to SumUp Next.js';
 const Page: NextPage = () => (
   <>
     <Meta title={title} path="/" />
-    <Container>
-      <a href="https://sumup.com" target="_blank" rel="noopener noreferrer">
-        <Logo />
-      </a>
+    <Main>
+      <Logo />
       <Card>
-        <Heading size={Heading.TERA} css={centeredStyles}>
+        <Heading size="tera" as="h1" css={centeredStyles}>
           {title}
         </Heading>
         <Text>
@@ -51,7 +49,7 @@ const Page: NextPage = () => (
           -specific customizations:
         </Text>
 
-        <List size="mega" ordered={false}>
+        <List size="mega">
           <li>
             <Anchor
               href="https://github.com/sumup-oss/circuit-ui"
@@ -103,7 +101,7 @@ const Page: NextPage = () => (
           </span>
         </Text>
       </Card>
-    </Container>
+    </Main>
   </>
 );
 

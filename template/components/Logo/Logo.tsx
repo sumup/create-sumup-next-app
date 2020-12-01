@@ -1,14 +1,26 @@
+import React from 'react';
 import { css } from '@emotion/core';
 import { SumUpLogo } from '@sumup/icons';
 
 import styled from '../../utils/styled';
 
-export const Logo = styled(SumUpLogo)(
+const StyledLogo = styled(SumUpLogo)(
   ({ theme }) => css`
     display: block;
     max-width: 120px;
-    fill: ${theme.colors.n900};
-    margin-bottom: ${theme.spacings.tera};
-    margin-top: ${theme.spacings.peta};
+    color: ${theme.colors.black};
+    margin: ${theme.spacings.tera} 0;
   `,
+);
+
+export const Logo = () => (
+  <a
+    href="https://sumup.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open SumUp's homepage in a new tab"
+    title="Open SumUp's homepage in a new tab"
+  >
+    <StyledLogo />
+  </a>
 );

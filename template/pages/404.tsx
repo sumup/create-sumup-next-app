@@ -8,7 +8,7 @@ import { Card, Heading, Text, Button } from '@sumup/circuit-ui';
 import styled from '../utils/styled';
 import { Logo } from '../components/Logo';
 
-const Container = styled('section')(
+const Main = styled('main')(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -30,12 +30,10 @@ const NotFound: NextPage = () => (
     <Head>
       <title>{title}</title>
     </Head>
-    <Container>
-      <a href="https://sumup.com" target="_blank" rel="noopener noreferrer">
-        <Logo />
-      </a>
+    <Main>
+      <Logo />
       <Card>
-        <Heading size={Heading.TERA} css={centeredStyles}>
+        <Heading size="tera" css={centeredStyles}>
           {title}
         </Heading>
         <Text>
@@ -46,7 +44,7 @@ const NotFound: NextPage = () => (
           <Button variant="primary">Return to the homepage</Button>
         </Link>
       </Card>
-    </Container>
+    </Main>
   </>
 );
 
