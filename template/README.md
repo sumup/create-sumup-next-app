@@ -147,7 +147,7 @@ To configure the syntax highlighting in your favorite text editor, head to the [
 
 ## Contributing
 
-If you have ideas for how we could improve this readme or the project in general, [let us know](https://github.com/sumup/create-sumup-next-app/issues) or [contribute some](https://github.com/sumup/create-sumup-next-app/edit/master/template/README.md)!
+If you have ideas for how we could improve this readme or the project in general, [let us know](https://github.com/sumup/create-sumup-next-app/issues) or [contribute some](https://github.com/sumup/create-sumup-next-app/edit/main/template/README.md)!
 
 ## Questions? Feedback?
 
