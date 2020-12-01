@@ -1,7 +1,7 @@
 {
   "name": "@sumup/create-sumup-next-app",
   "version": "1.2.0",
-  "description": "Creates a fresh NextJS application preconfigured with SumUp's Circuit UI and Foundry",
+  "description": "Create a fresh Next.js application preconfigured with SumUp's Circuit UI and Foundry",
   "keywords": [
     "react",
     "next",
@@ -23,7 +23,7 @@
     "node": ">=10.13.0"
   },
   "devDependencies": {
-    "@sumup/foundry": "^2.0.0",
-    "typescript": "^3.8.3"
+    "@sumup/foundry": "^3.1.3",
+    "typescript": "^4.1.2"
   }
 }
