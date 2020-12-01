@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withTM = require('next-transpile-modules')([
   '@sumup/circuit-ui',
+  '@sumup/design-tokens',
+  '@sumup/intl',
   '@sumup/icons',
 ]);
 
