@@ -1,43 +1,33 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { configureAxe } from 'jest-axe';
 import { ThemeProvider } from 'emotion-theming';
 import {
   render as renderTest,
-  wait,
+  waitFor,
   act,
   cleanup,
+  RenderResult,
 } from '@testing-library/react';
 import { renderHook, act as actHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
-import { Theme, light } from '@sumup/design-tokens';
+import { light } from '@sumup/design-tokens';
 
-export type RenderFn = (
-  component: React.ReactNode,
-  context?: {
-    theme?: Theme;
-  },
+export type RenderFn<T = any> = (
+  component: React.ReactElement,
   ...rest: any
-) => any;
+) => T;
 
-type Renderer = (component: React.ReactNode, ...rest: any) => any;
+const WithProviders: FunctionComponent = ({ children }) => (
+  <ThemeProvider theme={light}>{children}</ThemeProvider>
+);
 
-const renderWithProviders = (renderer: Renderer): RenderFn => (
-  component,
-  context = {},
-  ...rest
-) => {
-  const { theme = light } = context;
-  return renderer(
-    <ThemeProvider theme={theme}>{component}</ThemeProvider>,
-    rest,
-  );
-};
-
-export const render: RenderFn = renderWithProviders(renderTest);
-export const renderToHtml: RenderFn = renderWithProviders(renderToStaticMarkup);
-export const create: RenderFn = (component, context, ...rest) => {
-  const { container } = render(component, context, ...rest);
+export const render: RenderFn<RenderResult> = (component, options) =>
+  renderTest(component, { wrapper: WithProviders, ...options });
+export const renderToHtml: RenderFn<string> = (component) =>
+  renderToStaticMarkup(<WithProviders>{component}</WithProviders>);
+export const create = (...args: Parameters<RenderFn<RenderResult>>) => {
+  const { container } = render(...args);
   return container.children.length > 1
     ? container.children
     : container.firstChild;
@@ -45,8 +35,9 @@ export const create: RenderFn = (component, context, ...rest) => {
 
 const axe = configureAxe({
   rules: {
+    // Disable landmark rules when testing isolated components.
     region: { enabled: false },
   },
 });
 
-export { userEvent, wait, act, cleanup, actHook, renderHook, axe };
+export { userEvent, waitFor, act, cleanup, actHook, renderHook, axe };
