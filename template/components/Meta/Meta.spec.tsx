@@ -8,7 +8,8 @@ import { Meta, MetaProps } from './Meta';
  * The Head component from Next.js renders its children into the head element
  * as a side-effect, meaning we can't access them unless we mock the component.
  */
-jest.mock('next/head', () => (props) => <div {...props} />);
+// eslint-disable-next-line react/display-name
+jest.mock('next/head', () => (props: any) => <div {...props} />);
 
 describe('Meta', () => {
   /**
