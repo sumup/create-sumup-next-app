@@ -2,7 +2,7 @@
 
 # Welcome to SumUp Next.js <!-- omit in toc -->
 
-A [Next.js](https://github.com/zeit/next.js/) starter app, preconfigured with SumUp's [Circuit UI](https://www.npmjs.com/package/@sumup/circuit-ui) component library, SumUp's [Foundry](https://www.npmjs.com/package/@sumup/foundry) CLI toolkit for writing JavaScript, and a minimal custom server.
+A [Next.js](https://nextjs.org) starter app, preconfigured with SumUp's [Circuit UI](https://www.npmjs.com/package/@sumup/circuit-ui) component library, SumUp's [Foundry](https://www.npmjs.com/package/@sumup/foundry) CLI toolkit for writing JavaScript, and a minimal custom server.
 
 </div>
 
@@ -73,7 +73,7 @@ Out of the box, you get:
 - Server rendering and indexing of `./pages`
 - Static file serving. `./public/` is mapped to `/`
 
-Read more about [Next's Routing](https://github.com/zeit/next.js#routing).
+Read more about [Next's Routing](https://nextjs.org/docs/routing/introduction).
 
 ## Available Scripts
 
@@ -94,7 +94,7 @@ Builds the app for production to the `./.next` folder. It correctly bundles Reac
 
 Starts the application in production mode. The application should be compiled with `yarn build` first.
 
-See the section in Next docs about [deployment](https://github.com/zeit/next.js/wiki/Deployment) for more information.
+See the section in Next docs about [deployment](https://nextjs.org/docs/deployment) for more information.
 
 ### `yarn test:*`
 
@@ -119,21 +119,19 @@ You can fetch data in `pages` components using `getInitialProps` like this:
 ```jsx
 const Page = props => <div>Next stars: {props.stars}</div>;
 
-Page.getInitialProps = async ({ req }) => {
-  const rs = await fetch('https://api.github.com/repos/zeit/next.js');
+export const getStaticProps = async () => {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js');
   const json = await res.json();
   const stars = json.stargazers_count;
-  return { stars };
+  return { props: { stars } };
 };
 
 export default Page;
 ```
 
-For the initial page load, `getInitialProps` will execute on the server only. `getInitialProps` will only be executed on the client when navigating to a different route via the `Link` component or using the routing APIs.
+If you export an `async` function called `getStaticProps` from a page, Next.js will pre-render this page at build time using the props returned by `getStaticProps`.
 
-_Note: `getInitialProps` can **not** be used in children components. Only in `pages`._
-
-Read more about [fetching data and the component lifecycle](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle).
+Read more about [fetching data](https://nextjs.org/docs/basic-features/data-fetching).
 
 ## Styling with Emotion
 
@@ -151,7 +149,7 @@ If you have ideas for how we could improve this readme or the project in general
 
 ## Questions? Feedback?
 
-Check out [Next.js FAQ & docs](https://github.com/zeit/next.js#faq) or [let us know](https://github.com/sumup/create-sumup-next-app/issues) your feedback.
+Check out [Next.js FAQ & docs](https://nextjs.org/docs) or [let us know](https://github.com/sumup/create-sumup-next-app/issues) your feedback.
 
 ## About SumUp
 

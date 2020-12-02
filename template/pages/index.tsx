@@ -35,11 +35,7 @@ const Page: NextPage = () => (
         </Heading>
         <Text>
           This is a{' '}
-          <Anchor
-            href="https://github.com/zeit/next.js"
-            target="_blank"
-            noMargin
-          >
+          <Anchor href="https://nextjs.org" target="_blank" noMargin>
             Next.js
           </Anchor>
           -based starter project featuring some{' '}

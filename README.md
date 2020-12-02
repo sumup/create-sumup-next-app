@@ -2,7 +2,8 @@
 
 # ⚛️ create-sumup-next-app ⚛️
 
-The easiest way to get started writing a [Next.js](https://github.com/zeit/next.js/) app with SumUp's standard frontend toolchain.
+A
+[create-next-app template](https://nextjs.org/docs/api-reference/create-next-app) for TypeScript Next.js apps with SumUp's frontend stack.
 
 </div>
 
@@ -17,7 +18,7 @@ The easiest way to get started writing a [Next.js](https://github.com/zeit/next.
 2. Navigate to the directory you would like to place your project in.
 3. Run `yarn create next-app --example "https://github.com/sumup/create-sumup-next-app/tree/main/template" my-app`, where `my-app` is the name of your project.
 
-This will create the folder `my-app` and initialize a new project inside. The project will be based on [`Next.js`](https://github.com/zeit/next.js/) and will use SumUp's [`Circuit UI`](https://circuit.sumup.com/#/) component library and [`Foundry`](https://github.com/sumup/foundry) toolkit, as well as [`lodash`](https://lodash.com/).
+This will create the folder `my-app` and initialize a new project inside. The project will be based on [`Next.js`](https://github.com/vercel/next.js/) and will use SumUp's [`Circuit UI`](https://circuit.sumup.com/#/) component library and [`Foundry`](https://github.com/sumup/foundry) toolkit, as well as [`lodash`](https://lodash.com/).
 
 ## 🛠 Development workflow
 
@@ -92,7 +93,7 @@ error eslint@5.0.1: The engine "node" is incompatible with this module. Expected
 error Found incompatible module
 ```
 
-Use a version of node that is compatible with ESLint. If you cannot install it globally, you may try [nvm](https://github.com/creationix/nvm), [nodenv](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwinuL3IndneAhVLmbQKHRrJCAQQFjAAegQIBhAC&url=https%3A%2F%2Fgithub.com%2Fnodenv%2Fnodenv&usg=AOvVaw0v5LLFjnmygM4rB0ahbDrx), or similar tools.
+Use a version of Node that is compatible with ESLint. If you cannot install it globally, you may try [nvm](https://github.com/creationix/nvm), [nodenv](https://github.com/nodenv/nodenv), or similar tools.
 
 ### Error watching file for changes
 
@@ -118,9 +119,9 @@ brew install watchman
 
 ## 🔗 Related
 
-- [create-sumup-react-app](https://github.com/sumup/create-sumup-react-app) - Create new React apps with CRA, Circuit, and Foundry.
+- [create-sumup-react-app](https://github.com/sumup/create-sumup-react-app) - Create new React apps with CRA, Circuit UI, and Foundry.
+- [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) - Create Next.js apps in one command.
 - [create-react-app](https://github.com/facebook/create-react-app) - Create new React apps with no build configuration.
-- [create-next-app](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) - Create Next.js apps in one command.
 
 ## 💙 About SumUp
 
