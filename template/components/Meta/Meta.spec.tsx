@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, RenderFn } from '../../test-utils';
+import { render } from '../../test-utils';
 
 import { Meta, MetaProps } from './Meta';
 
@@ -16,8 +16,8 @@ describe('Meta', () => {
    * Having a separate rendering function for your components makes it easier
    * to render a separate component for each test and reduces boilerplate.
    */
-  function renderMeta<T>(renderFn: RenderFn<T>, props: MetaProps) {
-    return renderFn(<Meta {...props} />);
+  function renderMeta(props: MetaProps) {
+    return render(<Meta {...props} />);
   }
 
   /**
@@ -30,7 +30,7 @@ describe('Meta', () => {
   };
 
   it('should include base meta tags', () => {
-    const { container } = renderMeta(render, defaultProps);
+    const { container } = renderMeta(defaultProps);
 
     expect(container.querySelector('title')).toHaveTextContent(
       'Welcome to SumUp Next.js · SumUp',
@@ -89,7 +89,7 @@ describe('Meta', () => {
       updatedAt: 'asdfsf',
       twitter: 'sumup',
     };
-    const { container } = renderMeta(render, props);
+    const { container } = renderMeta(props);
 
     expect(container.querySelector('title')).toHaveTextContent(
       'Welcome to SumUp Next.js · Custom Name',
@@ -153,7 +153,7 @@ describe('Meta', () => {
         />
       ),
     };
-    const { container } = renderMeta(render, props);
+    const { container } = renderMeta(props);
 
     expect(container.querySelector('meta[property="og:video"')).toHaveAttribute(
       'content',

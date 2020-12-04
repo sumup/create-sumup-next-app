@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { create, renderToHtml, axe, RenderFn } from '../../test-utils';
+import { render, axe } from '../../test-utils';
 
 import { Logo } from './Logo';
 
@@ -9,8 +9,8 @@ describe('Logo', () => {
    * Having a separate rendering function for your components makes it easier
    * to render a separate component for each test and reduces boilerplate.
    */
-  function renderLogo<T>(renderFn: RenderFn<T>, props = {}) {
-    return renderFn(<Logo {...props} />);
+  function renderLogo(props = {}) {
+    return render(<Logo {...props} />);
   }
 
   /**
@@ -19,8 +19,8 @@ describe('Logo', () => {
    * and active styles.
    */
   it('should render with default styles', () => {
-    const actual = renderLogo(create);
-    expect(actual).toMatchSnapshot();
+    const { container } = renderLogo();
+    expect(container).toMatchSnapshot();
   });
 
   /**
@@ -28,8 +28,8 @@ describe('Logo', () => {
    * You will still need to test manually to ensure full accessibility.
    */
   it('should meet accessibility guidelines', async () => {
-    const wrapper = renderLogo(renderToHtml);
-    const actual = await axe(wrapper);
+    const { baseElement } = renderLogo();
+    const actual = await axe(baseElement);
     expect(actual).toHaveNoViolations();
   });
 });
