@@ -39,7 +39,7 @@ const ErrorPage: NextPage<ErrorPageProps> = ({ statusCode }) => (
         <Logo />
       </a>
       <Card>
-        <Heading size={Heading.TERA} css={centeredStyles}>
+        <Heading size="tera" css={centeredStyles}>
           {title}
         </Heading>
         <Text>
