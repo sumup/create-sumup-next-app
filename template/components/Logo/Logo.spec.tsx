@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { create, renderToHtml, axe, RenderFn } from '../../utils/test-utils';
+import { create, renderToHtml, axe, RenderFn } from '../../test-utils';
 
 import { Logo } from './Logo';
 
@@ -9,7 +9,7 @@ describe('Logo', () => {
    * Having a separate rendering function for your components makes it easier
    * to render a separate component for each test and reduces boilerplate.
    */
-  function renderLogo(renderFn: RenderFn, props = {}) {
+  function renderLogo<T>(renderFn: RenderFn<T>, props = {}) {
     return renderFn(<Logo {...props} />);
   }
 

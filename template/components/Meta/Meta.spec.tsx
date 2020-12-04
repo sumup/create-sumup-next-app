@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, RenderFn } from '../../utils/test-utils';
+import { render, RenderFn } from '../../test-utils';
 
 import { Meta, MetaProps } from './Meta';
 
@@ -16,7 +16,7 @@ describe('Meta', () => {
    * Having a separate rendering function for your components makes it easier
    * to render a separate component for each test and reduces boilerplate.
    */
-  function renderMeta(renderFn: RenderFn, props: MetaProps) {
+  function renderMeta<T>(renderFn: RenderFn<T>, props: MetaProps) {
     return renderFn(<Meta {...props} />);
   }
 

@@ -24,14 +24,14 @@ const WithProviders: FunctionComponent = ({ children }) => (
 
 export const render: RenderFn<RenderResult> = (component, options) =>
   renderTest(component, { wrapper: WithProviders, ...options });
-export const renderToHtml: RenderFn<string> = (component) =>
-  renderToStaticMarkup(<WithProviders>{component}</WithProviders>);
 export const create = (...args: Parameters<RenderFn<RenderResult>>) => {
   const { container } = render(...args);
   return container.children.length > 1
     ? container.children
     : container.firstChild;
 };
+export const renderToHtml: RenderFn<string> = (component) =>
+  renderToStaticMarkup(<WithProviders>{component}</WithProviders>);
 
 const axe = configureAxe({
   rules: {
