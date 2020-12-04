@@ -55,11 +55,15 @@ export default class extends Document<DocumentProps> {
           <link rel="preconnect" href={process.env.STATIC_ASSET_BASEURL} />
           <link
             rel="preload"
-            href={`${process.env.STATIC_ASSET_BASEURL}/fonts/latin-greek-cyrillic/aktiv-grotest-400.woff2`}
+            href={`${
+              process.env.STATIC_ASSET_BASEURL as string
+            }/fonts/latin-greek-cyrillic/aktiv-grotest-400.woff2`}
           />
           <link
             rel="preload"
-            href={`${process.env.STATIC_ASSET_BASEURL}/fonts/latin-greek-cyrillic/aktiv-grotest-700.woff2`}
+            href={`${
+              process.env.STATIC_ASSET_BASEURL as string
+            }/fonts/latin-greek-cyrillic/aktiv-grotest-700.woff2`}
           />
 
           {/* Critical CSS */}

@@ -32,7 +32,7 @@
     "@babel/core": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.0",
-    "@sumup/foundry": "^3.0.0",
+    "@sumup/foundry": "^4.0.0-canary",
     "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^11.0.0",
     "@testing-library/react-hooks": "^3.0.0",
