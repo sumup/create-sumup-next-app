@@ -1,17 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { SumUpLogo } from '@sumup/icons';
-
-import styled from '../../utils/styled';
-
-const StyledLogo = styled(SumUpLogo)(
-  ({ theme }) => css`
-    display: block;
-    max-width: 120px;
-    color: ${theme.colors.black};
-    margin: ${theme.spacings.tera} 0;
-  `,
-);
+import { Theme } from '@sumup/design-tokens';
 
 export const Logo = () => (
   <a
@@ -21,6 +11,13 @@ export const Logo = () => (
     aria-label="Open SumUp's homepage in a new tab"
     title="Open SumUp's homepage in a new tab"
   >
-    <StyledLogo />
+    <SumUpLogo
+      css={(theme: Theme) => css`
+        display: block;
+        max-width: 120px;
+        color: ${theme.colors.black};
+        margin: ${theme.spacings.tera} 0;
+      `}
+    />
   </a>
 );

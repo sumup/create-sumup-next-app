@@ -9,8 +9,8 @@ describe('Logo', () => {
    * Having a separate rendering function for your components makes it easier
    * to render a separate component for each test and reduces boilerplate.
    */
-  function renderLogo(props = {}) {
-    return render(<Logo {...props} />);
+  function renderLogo(props = {}, options = {}) {
+    return render(<Logo {...props} />, options);
   }
 
   /**
